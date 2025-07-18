@@ -8,7 +8,7 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
-app.use(express.json());
+app.use(express.json({ limit: "5mb" })); //helps to get json of size greater than 10kb
 app.use(cookieParser());
 app.use(cors({
     origin: "http://localhost:5173",

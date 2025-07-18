@@ -73,7 +73,7 @@ export const logout = (req, res) => {
         res.cookie("jwt", "", {maxAge: 0})
         res.status(200).json({message: "Logged out successfully"});
     } catch (error) {
-        console.log("error in logout controller", error.message);
+        console.log("Error in logout controller", error.message);
         res.status(500).json({message: "Internal Server Error"})
     }
 };
@@ -89,7 +89,7 @@ export const updateProfile = async (req, res) => {
         const updatedUser = await User.findByIdAndUpdate(userId, {profilePic: uploadResponse.secure_url}, {new: true})
         res.status(200).json(updatedUser);
     } catch (error) {
-        console.log("error in updating profile controller", error.message);
+        console.log("Error in updating profile controller", error.message);
         res.status(500).json({message: "Internal Server Error"});
     }
 }

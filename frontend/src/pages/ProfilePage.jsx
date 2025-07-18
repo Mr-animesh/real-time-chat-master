@@ -15,7 +15,7 @@ export default function ProfilePage() {
                 const base64Image = reader.result;
                 setSelectedImage(base64Image);
                 try {
-                    updateProfile({ profilePic: base64Image });
+                    await updateProfile({ profilePic: base64Image }); 
                 } catch (err) {
                     console.error("Failed to update profle:", err);
                 }
