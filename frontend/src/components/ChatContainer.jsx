@@ -8,13 +8,20 @@ import { formatMessageTime } from "../lib/utils";
 
 
 export default function ChatContainer() {
-    const {messages, getMessages, isMessageLoading, selectedUser} = useChatStore()
+    const {messages, getMessages, isMessageLoading, selectedUser, subscribeToMessages, unsubscribeToMessages} = useChatStore()
     const { authUser } = useAuthStore();
     const messageEndRef = useRef(null);
 
     useEffect(() => {
         getMessages(selectedUser._id);
-    }, [ selectedUser._id, getMessages]);
+        subscribeToMessages();
+        return () => unsubscribeToMessages();
+    }, [ selectedUser._id, getMessages, subscribeToMessages, unsubscribeToMessages]);
+
+    useEffect(() => {
+      if(messageEndRef.current && messages)
+        messageEndRef.current.scrollIntoView({behavior: "smooth"})
+    }, [messages]);
 
     if(isMessageLoading) return  (
         <div className="flex-1 flex flex-col overflow-auto">
