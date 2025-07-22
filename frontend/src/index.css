@@ -5,3 +5,7 @@
     , cyberpunk, valentine, halloween, garden, forest, aqua, lofi, fantasy, wireframe, luxury, dracula, cmyk, autumn, business, acid,
     lemonade, coffe, winter, dim, caramelatte, abyss, silk;
 }
+html, body, #root {
+  height: 100%;
+  background-color: hsl(var(--b1)); /* DaisyUI background token */
+}
