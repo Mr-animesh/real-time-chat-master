@@ -27,8 +27,8 @@ app.use('/api/messages', messageRoutes);
 if(process.env.NODE_ENV === "production"){
     console.log("heelo from route from frontedn")
     app.use(express.static(path.resolve(__dirname, "../frontend/dist")));
-    app.get("/*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+    app.get(/.*/, (req, res) => {
+        res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
     });
 }
 
