@@ -1,4 +1,4 @@
-import { Eye, EyeOff, Mail, MessageSquare, User, Lock, Loader, Loader2} from "lucide-react";
+import { Eye, EyeOff, Mail, User, Lock, Loader, Loader2, Coffee} from "lucide-react";
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ export default function SignupPage() {
             <div className="text-center mb-8">
               <div className="flex flex-col items-center gap-2 group">
                 <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bh-primary/20 transition-colors">
-                  <MessageSquare className="size-6 text-primary"></MessageSquare>
+                  <Coffee className="size-6 text-primary"/>
                 </div>
                 <h1 className="text-2xl font-bold mt-2">Create Account </h1>
                 <p className="text-base-content/60">

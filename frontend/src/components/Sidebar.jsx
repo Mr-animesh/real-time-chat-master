@@ -39,7 +39,7 @@ export default function Sidebar() {
                 <span className="text-sm">Show online only</span>
               </label>
               <span className="text-xs text-zinc-500">
-                ({onlineUsers.length - 1} online)
+                [{onlineUsers.length - 1} online]
               </span>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function Sidebar() {
                 <div className="hidden lg:block text-left min-w-0">
                   <div className="font-medium truncate">{user.fullName}</div>
                   <div className="text-sm text-zinc-400">
-                    {onlineUsers.includes(user._id) ? "Online" : "Offline"}
+                    {onlineUsers.includes(user._id) ? "Bitching" : "GatheringTea"}
                   </div>
                 </div>
               </button>
@@ -85,7 +85,7 @@ export default function Sidebar() {
 
             {filteredUsers.length === 0 && (
               <div className="text-center text-zinc-500 py-4">
-                No online users
+                No one is Bitching
               </div>
             )}
           </div>
