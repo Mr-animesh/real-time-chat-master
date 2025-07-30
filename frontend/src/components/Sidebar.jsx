@@ -77,7 +77,7 @@ export default function Sidebar() {
                 <div className="hidden lg:block text-left min-w-0">
                   <div className="font-medium truncate">{user.fullName}</div>
                   <div className="text-sm text-zinc-400">
-                    {onlineUsers.includes(user._id) ? "Bitching" : "GatheringTea"}
+                    {onlineUsers.includes(user._id) ? "Bitching" : "Offline"}
                   </div>
                 </div>
               </button>
